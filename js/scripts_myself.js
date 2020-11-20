@@ -49,7 +49,7 @@ function init() {
   var slide2 = new Slide(width, height, 'in');
   var l2 = new THREE.ImageLoader();
 	l2.setCrossOrigin('Anonymous');
-	l2.load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/spring.jpg', function(img) {
+	l2.load('https://raw.githubusercontent.com/Yuto-kimura/lab-html/main/img/universe-2742113_1920.jpg', function(img) {
 		slide2.setImage(img);
 	})
 	
