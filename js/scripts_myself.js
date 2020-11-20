@@ -10,25 +10,38 @@
 
 window.onload = init;
 console.ward = function() {}; // what warnings?
-
+var w1 = 100;
+var h1 = 100;
 function init() {
   var root = new THREERoot({
     createCameraControls: !true,
     antialias: (window.devicePixelRatio === 1),
-    fov: 80
+    fov: w1
   });
 
   root.renderer.setClearColor(0x000000, 0);
   root.renderer.setPixelRatio(window.devicePixelRatio || 1);
   root.camera.position.set(0, 0, 60);
-
-  var width = 100;
-  var height = 60;
+  
+    if (w1 >= 900) {
+        w1 = 300;
+    }
+    else {
+        w1 = 80;
+    }
+    // if (h1 >= 250) {
+    //     w1 = 300;
+    // }
+    // else {
+    //     w1 = 80;
+    // }
+    var width = w1;
+    var height = 250;
 
   var slide = new Slide(width, height, 'out');
 	var l1 = new THREE.ImageLoader();
 	l1.setCrossOrigin('Anonymous');
-	l1.load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/winter.jpg', function(img) {
+	l1.load('https://raw.githubusercontent.com/Yuto-kimura/lab-html/main/img/space1.jpg', function(img) {
 	  slide.setImage(img);
 	})
   root.scene.add(slide);
@@ -274,7 +287,14 @@ function THREERoot(params) {
     alpha: true
   });
   this.renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
-  document.getElementById('three-container').appendChild(this.renderer.domElement);
+    document.getElementById('three-container').appendChild(this.renderer.domElement);
+    var e = document.getElementById('three-container');
+
+// padding も border も含まないサイズ
+    w1 = parseInt(window.getComputedStyle(e).width);
+    h1 = parseInt(window.getComputedStyle(e).height);
+    console.log(w1)
+
 
   this.camera = new THREE.PerspectiveCamera(
     params.fov,

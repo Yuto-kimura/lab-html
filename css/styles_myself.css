@@ -1,29 +1,35 @@
-body {
+/* body {
   margin: 0;
   overflow: hidden;
-}
+} */
 
 /* canvas {
   background-image: radial-gradient(#666, #333);
 } */
 
-#instructions {
-  /* position: absolute; */
-  /* color: #fff;
+/* #instructions { */
+/* position: absolute; */
+/* color: #fff;
   bottom: 0; */
-  /* padding-bottom: 6px; */
-  /* font-family: sans-serif;
+/* padding-bottom: 6px; */
+/* font-family: sans-serif;
   width: 100%; */
-  /* text-align: center; */
-  /* pointer-events: none;
+/* text-align: center; */
+/* pointer-events: none;
   padding: 0, 0, 0, 0; */
-}
+/* } */
 
-.test1 {
+/* .test1 {
   z-index: 100;
 }
 .test2 {
   z-index: 0;
   width: 100%;
   height: 20px;
+} */
+.three-container {
+  width: 100%;
+  height: 100px;
+  padding: 0, 0, 0, 0;
+  margin: 0;
 }
